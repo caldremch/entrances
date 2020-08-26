@@ -4,7 +4,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.2.9"
+    this["myLibraryVersion"] = "1.3.1"
     this["myBintrayName"] = "entry-compiler"
     this["myArtifactId"] = "entry-compiler"
     this["myLibraryName"] = "entry annotation compiler"
@@ -36,6 +36,6 @@ tasks {
     }
 }
 
-//apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle.kts")
+apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")
 
 

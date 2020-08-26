@@ -35,4 +35,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 //    implementation(project(":entry"))
 //    annotationProcessor(project(":entry-compiler"))
+//    implementation 'com.caldremch.android:entry:1.2.9'
 }
