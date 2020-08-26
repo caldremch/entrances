@@ -4,7 +4,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.3.4"
+    this["myLibraryVersion"] = "1.0.0"
     this["myBintrayName"] = "entry-compiler"
     this["myArtifactId"] = "entry-compiler"
     this["myLibraryName"] = "entry annotation compiler"
@@ -29,7 +29,7 @@ tasks {
         kotlinOptions.jvmTarget = "1.8"
     }
 }
+apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/upload-to-jitpack-by-maven-publish.gradle")
 
-apply(from="../upload-by-maven-publish.gradle")
 
 

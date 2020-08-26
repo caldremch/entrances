@@ -1,10 +1,9 @@
-//这个entry 模块有问题, 重新配置需要
 plugins {
     id("com.android.library")
 }
 
 ext {
-    this["myLibraryVersion"] = "1.3.5"
+    this["myLibraryVersion"] = "1.0.0"
     this["myBintrayName"] = "entry"
     this["myArtifactId"] = "entry"
     this["myLibraryName"] = "entry for list"
@@ -29,7 +28,7 @@ dependencies {
     api("com.caldremch.android:entry-annotation:1.3.0")
 }
 
-apply(from="../upload-by-maven-publish.gradle")
+apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/upload-to-jitpack-by-maven-publish.gradle")
 
 //tasks {
 //    register("sourcesJar", Jar::class) {
