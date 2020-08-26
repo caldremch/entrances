@@ -1,6 +1,9 @@
 package com.caldremch.entry.demo
 
 import android.content.Context
+import com.caldremch.android.annotation.entry.Entry
+import com.caldremch.android.annotation.entry.IEntry
+
 //import com.caldremch.android.annotation.entry.IEntry
 
 /**
@@ -14,12 +17,13 @@ import android.content.Context
  * @describe
  *
  **/
-//class One : IEntry {
-//    override fun getTitle(): String {
-//        return "第一个入口"
-//    }
-//
-//    override fun onClick(context: Context?) {
-//
-//    }
-//}
+@Entry
+class One : IEntry {
+    override fun getTitle(): String {
+        return "第一个入口"
+    }
+
+    override fun onClick(context: Context?) {
+
+    }
+}
