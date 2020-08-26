@@ -4,7 +4,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.3.1"
+    this["myLibraryVersion"] = "1.3.3"
     this["myBintrayName"] = "entry-compiler"
     this["myArtifactId"] = "entry-compiler"
     this["myLibraryName"] = "entry annotation compiler"
@@ -18,13 +18,7 @@ dependencies {
     kapt(auto_service)
     implementation(auto_service)
     implementation(javapoet)
-    compileOnly("com.caldremch.android:entry-annotation:1.3.0")
-}
-
-buildscript {
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0")
-    }
+    implementation("com.caldremch.android:entry-annotation:1.3.0")
 }
 
 tasks {
