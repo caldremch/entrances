@@ -4,7 +4,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.3.1"
+    this["myLibraryVersion"] = "1.3.3"
     this["myBintrayName"] = "entry"
     this["myArtifactId"] = "entry"
     this["myLibraryName"] = "entry for list"
@@ -68,6 +68,6 @@ dependencies {
 //}
 //
 //
-apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")
+//apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")
 
-
+//apply(from="../bintray-with-maven-publish.gradle")
