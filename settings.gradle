@@ -1,4 +1,4 @@
-//include ':entry'
+include ':entry'
 include ':entry-compiler'
 //include ':entry-annotation'
 include ':app'

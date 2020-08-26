@@ -4,7 +4,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.3.3"
+    this["myLibraryVersion"] = "1.3.5"
     this["myBintrayName"] = "entry"
     this["myArtifactId"] = "entry"
     this["myLibraryName"] = "entry for list"
@@ -28,6 +28,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.2.0")
     api("com.caldremch.android:entry-annotation:1.3.0")
 }
+
+apply(from="../upload-by-maven-publish.gradle")
 
 //tasks {
 //    register("sourcesJar", Jar::class) {
