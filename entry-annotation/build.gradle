@@ -1,6 +1,6 @@
 apply plugin: "java"
 ext {
-    myLibraryVersion = "1.0.0"
+    myLibraryVersion = "1.4.0"
     myBintrayName = "entry-annotation"
     myArtifactId = myBintrayName
     myLibraryName = "entry annotation api"
