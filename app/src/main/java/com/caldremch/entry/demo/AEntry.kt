@@ -1,6 +1,7 @@
 package com.caldremch.entry.demo
 
 import android.content.Context
+import android.widget.Toast
 import com.caldremch.android.annotation.entry.Entry
 import com.caldremch.android.annotation.entry.IEntry
 
@@ -22,5 +23,6 @@ class AEntry : IEntry{
     }
 
     override fun onClick(context: Context?) {
+        Toast.makeText(context, "what", Toast.LENGTH_SHORT).show()
     }
 }
