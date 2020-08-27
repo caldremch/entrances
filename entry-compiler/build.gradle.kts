@@ -4,7 +4,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.4.0"
+    this["myLibraryVersion"] = "1.3.0"
     this["myBintrayName"] = "entry-compiler"
     this["myArtifactId"] = "entry-compiler"
     this["myLibraryName"] = "entry annotation compiler"
