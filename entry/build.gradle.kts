@@ -28,4 +28,4 @@ dependencies {
     api("com.caldremch.android:entry-annotation:1.3.0")
 }
 
-apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/upload-to-jitpack-by-maven-publish.gradle")
+apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")

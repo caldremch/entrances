@@ -29,7 +29,7 @@ tasks {
         kotlinOptions.jvmTarget = "1.8"
     }
 }
-apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/upload-to-jitpack-by-maven-publish.gradle")
+apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")
 
 
 
