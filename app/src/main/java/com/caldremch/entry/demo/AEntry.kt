@@ -20,7 +20,6 @@ class AEntry : IEntry{
     override fun getTitle(): String {
         return "AEntry"
     }
-
     override fun onClick(context: Context?) {
     }
 }
