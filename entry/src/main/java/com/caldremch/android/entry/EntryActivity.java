@@ -1,4 +1,4 @@
-package com.caldremch.entrylib;
+package com.caldremch.android.entry;
 
 import android.content.Context;
 import android.graphics.Color;
