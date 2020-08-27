@@ -29,8 +29,8 @@ apply plugin: 'kotlin-kapt'
 .....
 .....
 dependencies {
-		implementation 'com.caldremch.android:entry:1.5.0'
-		kapt 'com.caldremch.android:entry-compiler:1.5.1'
+	implementation 'com.caldremch.android:entry:1.5.0'
+	kapt 'com.caldremch.android:entry-compiler:1.5.1'
 }
 ```
 
@@ -38,8 +38,8 @@ dependencies {
 
 ```groovy
 dependencies {
-		implementation 'com.caldremch.android:entry:1.5.0'
-	 	annotationProcessor 'com.caldremch.android:entry-compiler:1.5.1'
+	implementation 'com.caldremch.android:entry:1.5.0'
+	annotationProcessor 'com.caldremch.android:entry-compiler:1.5.1'
 }  
 ```
 
@@ -81,7 +81,7 @@ Ok.
 
 
 
-
+![image](http://github.com/caldremch/entrances/raw/master/img/entrance.png)
 
 
 
