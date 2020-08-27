@@ -80,7 +80,7 @@ Ok.
 
 
 
-![](img/entrance.png)
+![](img/entrance.png)![](img/entrance.png)
 
 
 
