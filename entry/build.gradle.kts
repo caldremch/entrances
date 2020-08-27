@@ -3,7 +3,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.4.0"
+    this["myLibraryVersion"] = "1.5.0"
     this["myBintrayName"] = "entry"
     this["myArtifactId"] = "entry"
     this["myLibraryName"] = "entry for list"
@@ -28,4 +28,4 @@ dependencies {
     api("com.caldremch.android:entry-annotation:1.3.0")
 }
 
-//apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")
+apply(from="https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")
