@@ -80,7 +80,7 @@ Ok.
 
 
 
-![image](http://github.com/caldremch/entrances/raw/master/img/entrance.png)
+![](img/entrance.png)
 
 
 
