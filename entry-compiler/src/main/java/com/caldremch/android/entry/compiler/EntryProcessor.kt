@@ -5,9 +5,7 @@ import com.caldremch.android.annotation.entry.Entry
 import com.caldremch.android.annotation.entry.IEntry
 import com.caldremch.android.annotation.entry.IEntryCollection
 import com.caldremch.android.entry.compiler.base.BaseProcessor
-import com.google.auto.service.AutoService
 import com.squareup.javapoet.*
-import javax.annotation.processing.Processor
 import javax.annotation.processing.RoundEnvironment
 import javax.lang.model.element.Element
 import javax.lang.model.element.ElementKind
@@ -25,7 +23,6 @@ import javax.lang.model.element.TypeElement
  * @describe https://www.mdeditor.tw/pl/pQq0 增量编译支持
  *
  **/
-@AutoService(Processor::class)
 class EntryProcessor : BaseProcessor() {
     override fun process(
         set: MutableSet<out TypeElement>?,

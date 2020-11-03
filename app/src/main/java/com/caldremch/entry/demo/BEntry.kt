@@ -17,6 +17,7 @@ import com.caldremch.android.annotation.entry.IEntry
  **/
 @Entry
 class BEntry : IEntry{
+
     override fun getTitle(): String {
         return "BEntry"
     }

@@ -1,0 +1,143 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5")
+        classpath("com.android.tools.build:gradle:4.0.1")
+    }
+}
+
+
+
+static def printlnEx(log) {
+    System.out.println("bintray-upload > " + log)
+}
+
+//finally, i forgot the meaning of kotlin dsl
+//so i write this file
+apply plugin: "maven-publish"
+apply plugin: "com.jfrog.bintray"
+
+
+group = myPublishedGroupId
+version = myLibraryVersion
+
+def isAndroid = project.hasProperty("android")
+
+printlnEx("isAndroid: " + isAndroid)
+
+
+def properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newDataInputStream())
+def userName = properties.getProperty("bintray.user")
+def apiKey = properties.getProperty("bintray.apiKey")
+
+
+
+
+
+if (isAndroid) {
+    task sourcesJar(type: Jar) {
+        getArchiveClassifier().set("sources")
+        from android.sourceSets.main.java.srcDirs
+    }
+
+    task javadoc(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
+
+    task androidJavaDocsJar(type: Jar, dependsOn: javadoc) {
+        getArchiveClassifier().set("javadoc")
+        from javadoc.destinationDir
+    }
+
+} else {
+
+    java{
+        withJavadocJar()
+        withSourcesJar()
+    }
+
+//    task sourcesJar(type: Jar, dependsOn: classes) {
+//        getArchiveClassifier().set("sources")
+//        from sourceSets.main.allSource
+//    }
+//
+//    task javadocJar(type: Jar, dependsOn: javadoc) {
+//        getArchiveClassifier().set("javadoc")
+//        from javadoc.destinationDir
+//    }
+}
+
+tasks.withType(Javadoc) {
+    //fixed unknow tag error
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+bintray {
+    user = userName
+    key = apiKey
+    publications = ['bintrayPublication']
+    pkg {
+        repo = myBintrayRepo
+        name = myBintrayName
+        desc = myLibraryDescription
+        websiteUrl = mySiteUrl
+        vcsUrl = myGitUrl
+        licenses = [myAllLicenses]
+        publicDownloadNumbers = true
+        publish = true
+        version {
+            desc = myLibraryDescription
+        }
+    }
+}
+
+
+publishing {
+    publications {
+        bintrayPublication(MavenPublication) {
+            //wrap with afterEvaluate,or no components found
+            project.afterEvaluate {
+                artifactId = myArtifactId
+                if (isAndroid) {
+                    artifact sourcesJar
+                    artifact androidJavaDocsJar
+                    from components.debug
+                }else{
+                    from components.java
+                }
+            }
+
+            pom {
+                name = myLibraryName
+                description = myLibraryDescription
+                url = mySiteUrl
+                licenses {
+                    license {
+                        name = myLicenseName
+                        url = myLicenseUrl
+                    }
+                }
+                developers {
+                    developer {
+                        id = myDeveloperId
+                        name = myDeveloperName
+                        email = myDeveloperEmail
+                    }
+                }
+                scm {
+                    connection = myGitUrl
+                    developerConnection = myGitUrl
+                    url = mySiteUrl
+                }
+            }
+        }
+    }
+}

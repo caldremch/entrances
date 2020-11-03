@@ -1,7 +1,6 @@
 package com.caldremch.entry.demo
 
 import android.content.Context
-import android.widget.Toast
 import com.caldremch.android.annotation.entry.Entry
 import com.caldremch.android.annotation.entry.IEntry
 
@@ -17,13 +16,12 @@ import com.caldremch.android.annotation.entry.IEntry
  *
  **/
 @Entry
-class AEntry : IEntry{
+class CEntry : IEntry{
 
     override fun getTitle(): String {
-        return "AEntry"
+        return "打开弹窗"
     }
 
-    override fun onClick(context: Context) {
-        Toast.makeText(context, "it a entry", Toast.LENGTH_SHORT).show()
+    override fun onClick(context: Context?) {
     }
 }

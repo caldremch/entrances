@@ -2,11 +2,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
-    kotlin("kapt")
 }
 
 ext {
-    this["myLibraryVersion"] = "1.4.0"
+    this["myLibraryVersion"] = "1.5.1"
     this["myBintrayName"] = "entry-compiler"
     this["myArtifactId"] = "entry-compiler"
     this["myLibraryName"] = "entry annotation compiler"
@@ -15,10 +14,7 @@ ext {
 
 
 dependencies {
-     val auto_service = "com.google.auto.service:auto-service:1.0-rc6"
      val javapoet = "com.squareup:javapoet:1.10.0"
-    kapt(auto_service)
-    implementation(auto_service)
     implementation(javapoet)
     implementation("com.caldremch.android:entry-annotation:1.3.0")
     implementation(kotlin("stdlib-jdk8"))
