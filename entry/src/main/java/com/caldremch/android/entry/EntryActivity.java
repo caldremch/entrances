@@ -124,7 +124,7 @@ public final class EntryActivity extends AppCompatActivity {
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        entry.onClick(parent.getContext());
+                        entry.onClick(parent.getContext(), view);
                     }
                 });
             } else {

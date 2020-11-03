@@ -5,7 +5,7 @@ plugins {
 }
 
 ext {
-    this["myLibraryVersion"] = "1.5.1"
+    this["myLibraryVersion"] = "1.6.0"
     this["myBintrayName"] = "entry-compiler"
     this["myArtifactId"] = "entry-compiler"
     this["myLibraryName"] = "entry annotation compiler"
@@ -16,7 +16,7 @@ ext {
 dependencies {
      val javapoet = "com.squareup:javapoet:1.10.0"
     implementation(javapoet)
-    implementation("com.caldremch.android:entry-annotation:1.3.0")
+    implementation("com.caldremch.android:entry-annotation:1.6.0")
     implementation(kotlin("stdlib-jdk8"))
 }
 
@@ -41,3 +41,5 @@ val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
     jvmTarget = "1.8"
 }
+
+apply(from = "https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")

@@ -1,6 +1,9 @@
 package com.caldremch.android.annotation.entry;
 
 import android.content.Context;
+import android.view.View;
+
+import androidx.annotation.NonNull;
 
 /**
  * @author Caldremch
@@ -9,6 +12,8 @@ import android.content.Context;
  * @describe entry should implementation of
  **/
 public interface IEntry {
-     String getTitle();
-     void onClick(Context context);
+
+    String getTitle();
+
+    void onClick(@NonNull Context context, @NonNull View itemView);
 }

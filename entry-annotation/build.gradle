@@ -1,6 +1,6 @@
 apply plugin: "java"
 ext {
-    myLibraryVersion = "1.5.0"
+    myLibraryVersion = "1.6.0"
     myBintrayName = "entry-annotation"
     myArtifactId = myBintrayName
     myLibraryName = "entry annotation api"
@@ -12,4 +12,4 @@ dependencies {
     compileOnly("com.google.android:android:4.1.1.4")
     compileOnly("androidx.annotation:annotation:1.1.0")
 }
-//apply from: "https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle"
+apply from: "https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle"
