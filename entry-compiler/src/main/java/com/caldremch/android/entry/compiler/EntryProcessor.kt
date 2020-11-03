@@ -22,7 +22,7 @@ import javax.lang.model.element.TypeElement
  *
  * @email caldremch@163.com
  *
- * @describe
+ * @describe https://www.mdeditor.tw/pl/pQq0 增量编译支持
  *
  **/
 @AutoService(Processor::class)
@@ -45,8 +45,8 @@ class EntryProcessor : BaseProcessor() {
 
     private fun handleAnnotation(entryElements: MutableSet<out Element>) {
         val typeEle = elementUtils.getTypeElement(IEntryCollection::class.java.name)
-//        logger.info("typeEle --> $${typeEle.toString()}")
-//        logger.info("enclosedElements --> $${typeEle.enclosedElements.toString()}")
+        logger.info("typeEle --> $${typeEle.toString()}")
+        logger.info("enclosedElements --> $${typeEle.enclosedElements.toString()}")
 
         //创建参数
         val inputEntryListType = ParameterizedTypeName.get(
@@ -63,9 +63,9 @@ class EntryProcessor : BaseProcessor() {
                 .addModifiers(Modifier.PUBLIC)
                 .addParameter(entryParamSpec)
 
-//        println("entryElements: ${entryElements.size}")
+        logger.info("entryElements: ${entryElements.size}")
         for (an in entryElements) {
-//            println("kind: ${an.kind}")
+            logger.info("kind: ${an.kind}")
             if (an.kind == ElementKind.CLASS) {
                 val typeElement = an as TypeElement
                 methodBuild.addStatement("entrys.add(new \$T())", typeElement)
