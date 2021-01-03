@@ -15,5 +15,5 @@ public interface IEntry {
 
     String getTitle();
 
-    void onClick(@NonNull Context context, @NonNull View itemView);
+    void onClick(@NonNull Context context);
 }

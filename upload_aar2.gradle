@@ -1,0 +1,26 @@
+apply plugin: 'maven'
+
+afterEvaluate {
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    def userName = properties.getProperty('my.username')
+    def userPwd = properties.getProperty('my.password')
+
+    group = "com.fanggeek.agent"
+    version = libraryVersion
+    archivesBaseName = libraryName
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: 'https://packages.aliyun.com/maven/repository/2061953-snapshot-3BsG6J/') {
+                    authentication(
+                            userName: userName,
+                            password: userPwd
+                    )
+                }
+            }
+        }
+    }
+}
+
