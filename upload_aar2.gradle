@@ -6,14 +6,16 @@ afterEvaluate {
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
     def userName = properties.getProperty('my.username')
     def userPwd = properties.getProperty('my.password')
+    def uploadGroup = properties.getProperty('upload.group')
+    def uploadUrl = properties.getProperty('upload.url')
 
-    group = "com.fanggeek.agent"
+    group = uploadGroup
     version = libraryVersion
     archivesBaseName = libraryName
     uploadArchives {
         repositories {
             mavenDeployer {
-                repository(url: 'https://packages.aliyun.com/maven/repository/2061953-snapshot-3BsG6J/') {
+                repository(url: uploadUrl) {
                     authentication(
                             userName: userName,
                             password: userPwd
