@@ -26,12 +26,12 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    api("com.caldremch.android:entry-annotation:1.3.0")
+    implementation("androidx.appcompat:appcompat:1.3.1")
+    api("io.github.caldremch:entry-annotation:${properties["entry_annotation_version"]}")
     api(
-        "androidx.annotation:annotation:1.1.0"
+        "androidx.annotation:annotation:1.2.0"
     )
+    implementation("androidx.recyclerview:recyclerview:1.1.0")
 }
-apply(from = "../upload_aar2.gradle")
 
-//apply(from = "https://raw.githubusercontent.com/caldremch/gradle-maven-kotlin-dsl/master/bintray-with-maven-publish.gradle")
+apply(from="../gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle")

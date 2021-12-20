@@ -2,6 +2,7 @@ package com.caldremch.android.entry;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +11,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.caldremch.android.annotation.EntryConst;
 import com.caldremch.android.annotation.entry.IEntry;
@@ -29,7 +33,7 @@ import java.util.List;
  **/
 public final class EntryActivity extends AppCompatActivity {
 
-    private ListView listView;
+    private RecyclerView listView;
     private int dp16;
 
     private int dp2px(float dpValue) {
@@ -41,10 +45,15 @@ public final class EntryActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         dp16 = dp2px(16f);
-        listView = new ListView(this);
+        listView = new RecyclerView(this);
+        listView.setLayoutManager(new LinearLayoutManager(this));
+        listView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                outRect.top  = dp16;
+            }
+        });
         listView.setPadding(dp16, dp16, dp16, dp16);
-        listView.setDivider(new ColorDrawable(Color.TRANSPARENT));
-        listView.setDividerHeight(dp16);
         setContentView(listView);
         initView();
     }
@@ -78,7 +87,7 @@ public final class EntryActivity extends AppCompatActivity {
     }
 
     @RestrictTo(RestrictTo.Scope.LIBRARY)
-    private class EntryListAdapter extends BaseAdapter {
+    private class EntryListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
         private List<IEntry> data;
 
@@ -86,56 +95,32 @@ public final class EntryActivity extends AppCompatActivity {
             this.data = data;
         }
 
+
         @Override
-        public int getCount() {
+        public int getItemCount() {
             return data.size();
         }
 
+        @NonNull
         @Override
-        public Object getItem(int i) {
-            return data.get(i);
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        private TextView createView(Context context) {
-            TextView tv = new TextView(context);
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            TextView tv = new TextView(parent.getContext());
             tv.setPadding(dp16, dp16, dp16, dp16);
-            tv.setBackgroundColor(Color.BLUE);
+            tv.setBackgroundColor(Color.parseColor("#257BF4"));
             tv.setTextColor(Color.WHITE);
-            return tv;
+            RecyclerView.ViewHolder holder =   new RecyclerView.ViewHolder(tv) {
+            };
+            tv.setOnClickListener(v -> {
+               int pos =  holder.getAdapterPosition();
+               data.get(pos).onClick(v.getContext());
+            });
+            return holder;
         }
 
         @Override
-        public View getView(int i, View view, final ViewGroup parent) {
-            final IEntry entry = data.get(i);
-            ViewHolder holder;
-            if (view == null) {
-                TextView tv = createView(parent.getContext());
-                ListView.MarginLayoutParams layoutParams = new ListView.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                tv.setLayoutParams(layoutParams);
-                view = tv;
-                holder = new ViewHolder();
-                holder.tv = tv;
-                view.setTag(holder);
-                view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        entry.onClick(parent.getContext());
-                    }
-                });
-            } else {
-                holder = (ViewHolder) view.getTag();
-            }
-            holder.tv.setText(entry.getTitle());
-            return view;
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+            ((TextView)holder.itemView).setText(data.get(position).getTitle());
         }
 
-        private class ViewHolder {
-            TextView tv;
-        }
     }
 }

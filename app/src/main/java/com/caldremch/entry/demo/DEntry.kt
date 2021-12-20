@@ -22,6 +22,6 @@ class DEntry : IEntry{
         return "自定义View展示"
     }
 
-    override fun onClick(context: Context?) {
+    override fun onClick(context: Context) {
     }
 }

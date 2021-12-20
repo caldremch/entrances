@@ -1,0 +1,1 @@
+./gradlew entry-compiler:publishSonatypePublicationPublicationToMavenRepository

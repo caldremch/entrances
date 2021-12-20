@@ -22,6 +22,6 @@ class CEntry : IEntry{
         return "打开弹窗"
     }
 
-    override fun onClick(context: Context?) {
+    override fun onClick(context: Context) {
     }
 }

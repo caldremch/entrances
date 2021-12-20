@@ -1,0 +1,3 @@
+[submodule "gradle-maven-kotlin-dsl"]
+	path = gradle-maven-kotlin-dsl
+	url = git@github.com:caldremch/gradle-maven-kotlin-dsl.git

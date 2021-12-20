@@ -17,11 +17,9 @@ import com.caldremch.android.annotation.entry.IEntry
  **/
 @Entry
 class BEntry : IEntry{
-
     override fun getTitle(): String {
         return "BEntry"
     }
-
-    override fun onClick(context: Context?) {
+    override fun onClick(context: Context) {
     }
 }
