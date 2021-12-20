@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         //add extra entry by code
         rv.addEntry(object : IEntry {
             override fun getTitle(): String {
-                return "add extra by code"
+                return "add extra by code and name so long long long long long long"
             }
             override fun onClick(context: Context) {
                 Toast.makeText(this@MainActivity, title, Toast.LENGTH_SHORT).show()
