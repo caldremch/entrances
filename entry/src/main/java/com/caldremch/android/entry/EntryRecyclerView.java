@@ -23,7 +23,7 @@ import java.util.List;
  * @email caldremch@163.com
  * @describe
  **/
-class EntryRecyclerView extends RecyclerView {
+public class EntryRecyclerView extends RecyclerView {
 
     private int dp16;
     private EntryListAdapter adapter;
