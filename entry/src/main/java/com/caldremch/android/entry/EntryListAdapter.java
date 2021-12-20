@@ -70,4 +70,8 @@ class EntryListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
          notifyDataSetChanged();
     }
 
+    public void addEntry(IEntry data) {
+        this.data.add(data);
+        notifyDataSetChanged();
+    }
 }

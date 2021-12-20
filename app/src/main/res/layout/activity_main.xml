@@ -8,6 +8,7 @@
 
 
     <com.caldremch.android.entry.EntryRecyclerView
+        android:id="@+id/entryListView"
         android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="parent"

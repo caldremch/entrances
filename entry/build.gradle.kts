@@ -31,7 +31,7 @@ dependencies {
     api(
         "androidx.annotation:annotation:1.2.0"
     )
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
 }
 
 apply(from="../gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle")

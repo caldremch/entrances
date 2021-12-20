@@ -63,6 +63,10 @@ public class EntryRecyclerView extends RecyclerView {
         adapter.setList(data);
     }
 
+    public void addEntry(IEntry data) {
+        adapter.addEntry(data);
+    }
+
     private List<IEntry> getEntryList() {
         List<IEntry> list = new ArrayList<>();
         try {
