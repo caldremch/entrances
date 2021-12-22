@@ -1,6 +1,7 @@
 package com.caldremch.android.entry;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
@@ -27,6 +28,13 @@ public class EntryRecyclerView extends RecyclerView {
 
     private int dp16;
     private EntryListAdapter adapter;
+    private boolean empty = false;
+
+    public EntryRecyclerView(@NonNull Context context, boolean empty) {
+        super(context);
+        this.empty = empty;
+        init();
+    }
 
     public EntryRecyclerView(@NonNull Context context) {
         super(context);
@@ -35,12 +43,20 @@ public class EntryRecyclerView extends RecyclerView {
 
     public EntryRecyclerView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        extracted(context, attrs);
         init();
 
     }
 
+    private void extracted(@NonNull Context context, @Nullable AttributeSet attrs) {
+        TypedArray typedValue = context.obtainStyledAttributes(attrs, R.styleable.EntryRecyclerView);
+        empty = typedValue.getBoolean(R.styleable.EntryRecyclerView_empty, false);
+        typedValue.recycle();
+    }
+
     public EntryRecyclerView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        extracted(context, attrs);
         init();
 
     }
@@ -55,7 +71,7 @@ public class EntryRecyclerView extends RecyclerView {
             }
         });
         setPadding(dp16, dp16, dp16, dp16);
-        adapter = new EntryListAdapter(getContext(), getEntryList());
+        adapter = new EntryListAdapter(getContext(), empty ? new ArrayList<>() : getEntryList());
         setAdapter(adapter);
     }
 
