@@ -35,10 +35,11 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.2.1")
 }
 
-if(rootProject.file("gradle-maven-kotlin-dsl").exists()){
-    apply(from="../gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle")
+val publishPath = "${rootProject.projectDir.absolutePath}/gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle"
+val publishFile = File(publishPath)
+if(publishFile.exists()){
+    apply(from=path)
 }
-
 
 if(project.hasProperty("githubReleaseToken")){
     val path = "${rootProject.projectDir.absolutePath}/github-release.gradle"
