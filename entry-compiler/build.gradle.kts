@@ -6,7 +6,7 @@ plugins {
 
 ext {
     this["libraryName"] = "entry-compiler"
-    this["myLibraryVersion"] = "1.6.2"
+    this["myLibraryVersion"] = "1.6.3"
     this["myBintrayName"] = "entry-compiler"
     this["myArtifactId"] = "entry-compiler"
     this["myLibraryName"] = "entry annotation compiler"
@@ -15,8 +15,6 @@ ext {
 
 
 dependencies {
-    val javapoet = "com.squareup:javapoet:1.10.0"
-    implementation(javapoet)
     implementation("io.github.caldremch:entry-annotation:${properties["entry_annotation_version"]}")
     implementation(kotlin("stdlib-jdk8"))
     // ksp deps https://github.com/google/ksp/releases/tag/1.7.20-1.0.6
