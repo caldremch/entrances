@@ -24,21 +24,21 @@ Quickly create entrances for debugging various functions
 #####kotlin
 
 ```groovy
-apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.devtools.ksp'
 .....
 .....
 dependencies {
-	implementation 'com.caldremch.android:entry:1.5.0'
-	kapt 'com.caldremch.android:entry-compiler:1.5.1'
+	implementation 'com.caldremch.android:entry:1.6.3'
+	ksp 'com.caldremch.android:entry-compiler:1.6.3'
 }
 ```
 
-##### java
+##### java 使用旧版compiler 1.6.2
 
 ```groovy
 dependencies {
-	implementation 'com.caldremch.android:entry:1.5.0'
-	annotationProcessor 'com.caldremch.android:entry-compiler:1.5.1'
+	implementation 'com.caldremch.android:entry:1.6.3'
+	annotationProcessor 'com.caldremch.android:entry-compiler:1.6.2'
 }  
 ```
 
