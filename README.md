@@ -1,10 +1,10 @@
+![main](https://github.com/caldremch/entrances/actions/workflows/android.yml/badge.svg?branch=master)
 
 
-[![](https://jitpack.io/v/caldremch/entrances.svg)](https://jitpack.io/#caldremch/entrances)
 
-|                            entry                             |                       entry-annotation                       | entry-compiler |
-| --- | --- | --- |
-| [ ![Download](https://api.bintray.com/packages/caldremch/maven/entry/images/download.svg) ](https://bintray.com/caldremch/maven/entry/_latestVersion) | [ ![Download](https://api.bintray.com/packages/caldremch/maven/entry-annotation/images/download.svg?version=1.3.0) ](https://bintray.com/caldremch/maven/entry-annotation/1.3.0/link) |[ ![Download](https://api.bintray.com/packages/caldremch/maven/entry-compiler/images/download.svg) ](https://bintray.com/caldremch/maven/entry-compiler/_latestVersion)|
+| entry                                                                                        | entry-annotation                                                                                        | entry-compiler                                                                                        |
+|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| ![maven](https://img.shields.io/maven-central/v/io.github.caldremch/entry?style=flat-square) | ![maven](https://img.shields.io/maven-central/v/io.github.caldremch/entry-annotation?style=flat-square) | ![maven](https://img.shields.io/maven-central/v/io.github.caldremch/entry-compiler?style=flat-square) |
 
 
 
