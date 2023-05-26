@@ -15,8 +15,9 @@ dependencies {
     compileOnly("androidx.annotation:annotation:1.2.0")
 }
 
-def file = new File("$rootDir/gradle-maven-kotlin-dsl")
-if (file.exists()){
-    apply from: "$rootDir/gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle"
+def publishPath = "$rootDir/gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle"
+def publishFile = new File(publishPath)
+if (publishFile.exists()){
+    apply from: "$publishPath"
 }
 

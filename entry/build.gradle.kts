@@ -38,7 +38,7 @@ dependencies {
 val publishPath = "${rootProject.projectDir.absolutePath}/gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle"
 val publishFile = File(publishPath)
 if(publishFile.exists()){
-    apply(from=path)
+    apply(from=publishPath)
 }
 
 if(project.hasProperty("githubReleaseToken")){
