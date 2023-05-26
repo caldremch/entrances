@@ -46,4 +46,14 @@ compileTestKotlin.kotlinOptions {
     jvmTarget = "1.8"
 }
 
-apply(from="../gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle")
+
+if(rootProject.file("gradle-maven-kotlin-dsl").exists()){
+    apply(from="../gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle")
+}
+
+
+if(project.hasProperty("githubReleaseToken")){
+    val path = "${rootProject.projectDir.absolutePath}/github-release.gradle"
+    println("path=$path")
+    apply(from=path)
+}
