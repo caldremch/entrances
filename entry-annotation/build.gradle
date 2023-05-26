@@ -1,3 +1,4 @@
+import java.io.File
 apply plugin: "java"
 ext {
     libraryName = "entry-annotation"
@@ -14,4 +15,8 @@ dependencies {
     compileOnly("androidx.annotation:annotation:1.2.0")
 }
 
-apply from: "../gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle"
+def file = new File("$rootDir/gradle-maven-kotlin-dsl")
+if (file.exists()){
+    apply from: "$rootDir/gradle-maven-kotlin-dsl/mavencentral-with-maven-publish.gradle"
+}
+
