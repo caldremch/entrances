@@ -15,10 +15,16 @@ ext {
 
 
 dependencies {
-     val javapoet = "com.squareup:javapoet:1.10.0"
+    val javapoet = "com.squareup:javapoet:1.10.0"
     implementation(javapoet)
     implementation("io.github.caldremch:entry-annotation:${properties["entry_annotation_version"]}")
     implementation(kotlin("stdlib-jdk8"))
+    // ksp deps https://github.com/google/ksp/releases/tag/1.7.20-1.0.6
+    implementation("com.google.devtools.ksp:symbol-processing-api:1.6.10-1.0.4")
+    // https://square.github.io/kotlinpoet/
+    implementation("com.squareup:kotlinpoet:1.11.0")
+    implementation("com.squareup:kotlinpoet-ksp:1.11.0")
+    implementation("com.squareup:kotlinpoet-metadata:1.11.0")
 }
 
 tasks {
