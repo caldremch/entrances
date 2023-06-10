@@ -28,8 +28,8 @@ apply plugin: 'com.google.devtools.ksp'
 .....
 .....
 dependencies {
-	implementation 'com.caldremch.android:entry:1.6.3'
-	ksp 'com.caldremch.android:entry-compiler:1.6.3'
+	implementation 'io.github.caldremch:entry:1.6.3'
+	ksp 'io.github.caldremch:entry-compiler:1.6.3'
 }
 ```
 
@@ -37,8 +37,8 @@ dependencies {
 
 ```groovy
 dependencies {
-	implementation 'com.caldremch.android:entry:1.6.3'
-	annotationProcessor 'com.caldremch.android:entry-compiler:1.6.2'
+	implementation 'io.github.caldremch:entry:1.6.3'
+	annotationProcessor 'io.github.caldremch:entry-compiler:1.6.2'
 }  
 ```
 
